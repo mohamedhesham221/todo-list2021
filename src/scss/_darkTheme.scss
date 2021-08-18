@@ -1,0 +1,26 @@
+.darkBck {
+    background-image: url(../assets/images/bg-mobile-dark.jpg);
+}
+.darkInput,
+.darkList,
+.darkFilter  {
+    background-color: $veryDarkDesaturatedBlue !important;
+}
+.darkTxtInput,
+.darkTodo {
+    color: $lightGrayishBlue !important;
+}
+.darkSubmit,
+.darkFilter,
+.darkCheck   {
+    border-color: $darkGrayishBlue !important;
+}
+.darkCount {
+    color: $darkGrayishBlue !important;
+}
+.darkTxt {
+    color: $darkGrayishBlue !important;
+}
+.darkItem {
+    border-color: $veryDarkGrayishBlue !important;
+}

@@ -1,0 +1,103 @@
+@mixin padding-md {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+@mixin padding-lg  {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+@mixin padding-xlg {
+    padding-left: 350px;
+    padding-right: 350px;
+}
+@mixin hoverCross {
+    .todos__list--item:hover .cross{
+        opacity: 1;
+    }
+    .todos__list--item {
+        cursor: pointer;
+        .todos__list--item__check:hover {
+            border-color: hsl(280, 12%, 56%);
+        }
+        .cross{
+            opacity: 0;
+            transition: all .5s linear;
+        }
+    }
+}
+@mixin date {
+    display: block !important;
+    top: 10px !important;
+    right: unset !important;
+    left: 10px !important;
+    margin: 0;
+    background-color: #c058f399;
+    border-radius: 5px;
+    p {
+        &:nth-child(2) {
+            font-size: 2rem !important;
+        }
+    }
+}
+@mixin filter {
+    .todos-filter {
+        display: none;
+    }
+    .lg-screen {
+        display: flex !important;
+        width: 50%;
+        margin: 0;
+        background-color: transparent;
+        
+    }
+}
+@media only screen and (min-width: 768px) {
+    .top-background {
+        @include padding-md();
+        background-image: url(../assets/images/bg-desktop-light.jpg);
+    }
+    .darkBck {
+        background-image: url(../assets/images/bg-desktop-dark.jpg);
+    }
+    .todos {
+        @include padding-md();
+    }
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
+    .top-background {
+        @include padding-lg();
+}
+    .todos {
+        @include padding-lg();
+        @include hoverCross();
+        @include filter();
+}
+    .date {
+        @include date();
+    }
+    .changeColor {
+        background-color: #3a7bfd66 !important;
+    }
+
+}
+@media (min-width: 1300px) and (max-width: 1440px) {
+    .top-background {
+        @include padding-xlg();
+}
+    .todos {
+        @include padding-xlg();
+        @include hoverCross();
+        @include filter();
+    }
+    .date {
+        @include date();
+        p {
+            &:nth-child(2) {
+                font-size: 3rem;
+            }
+        }
+    }
+    .changeColor {
+        background-color: #3a7bfd66 !important;
+    }
+}

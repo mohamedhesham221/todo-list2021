@@ -1,0 +1,22 @@
+.date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    color: $veryLightGray;
+    font-family: $josefin;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    p {
+        margin: 0 5px;
+        &:nth-child(2) {
+            font-size: 1.5rem;
+        }
+    }
+}
