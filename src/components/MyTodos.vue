@@ -3,7 +3,8 @@
     <div class="todos__list" :class="{darkList:switchTheme}">
       <!--render all array -->
       <div v-if="activeArr == 0">
-          <draggable v-model="myTodos" group="people" @start="drag=true" @end="drag=false">
+          <draggable :myTodos="myTodos" :move="checkMove"
+                      @start="dragging = true" @end="dragging = false" handle=".handle">
         <div class="todos__list--item" v-for="(todo,index) in myTodos" :key="index"
             :class="{darkItem:switchTheme}">
         <div class="todos__list--item__check"
@@ -13,7 +14,8 @@
                 transferCounts;">
           <img src="../assets/images/icon-check.svg" alt="check" :class="{markCheck: todo.checked}">
         </div>
-        <p :class="{darkTodo:switchTheme, lineThrough: todo.checked}">{{ todo.name }}</p>
+        <p :class="{darkTodo:switchTheme, lineThrough: todo.checked}"
+            class="handle">{{ todo.name }}</p>
         <img src="../assets/images/icon-cross.svg" alt="cross" class="cross"
           @click="removeTodo(index);
                   todo.checked? '' : countItems--;
@@ -88,6 +90,8 @@ export default {
       keyStorage: 'item-todo',
       keyCount: 'items-count',
       keySwitch: 'switcher',
+      dragging: true,
+      display: 'Handle',
     };
   },
   created() {
@@ -97,6 +101,9 @@ export default {
     draggable,
   },
   methods: {
+    checkMove(e) {
+      window.console.log(`Future index: ${e.draggedContext.futureIndex}`);
+    },
     customEve() {
       // eslint-disable-next-line no-return-assign
       Bus.$on('todos', (el) => this.myTodos = el);
