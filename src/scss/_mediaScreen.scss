@@ -3,12 +3,12 @@
     padding-right: 120px;
 }
 @mixin padding-lg  {
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 300px;
+    padding-right: 300px;
 }
 @mixin padding-xlg {
-    padding-left: 350px;
-    padding-right: 350px;
+    padding-left: 450px;
+    padding-right: 450px;
 }
 @mixin hoverCross {
     .todos__list--item:hover .cross{
@@ -63,7 +63,7 @@
         @include padding-md();
     }
 }
-@media (min-width: 1024px) and (max-width: 1300px) {
+@media (min-width: 1024px) and (max-width: 1229px) {
     .top-background {
         @include padding-lg();
 }
@@ -80,7 +80,7 @@
     }
 
 }
-@media (min-width: 1300px) and (max-width: 1440px) {
+@media (min-width: 1300px) and (max-width: 1439px) {
     .top-background {
         @include padding-xlg();
 }
@@ -99,5 +99,11 @@
     }
     .changeColor {
         background-color: #3a7bfd66 !important;
+    }
+}
+@media only screen  and (min-width: 1440) {
+    .top-background, .todos {
+        padding-left: 500px !important;
+        padding-right: 500px !important;
     }
 }
