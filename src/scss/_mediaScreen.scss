@@ -106,4 +106,12 @@
         padding-left: 500px !important;
         padding-right: 500px !important;
     }
+    .date {
+        @include date();
+        p {
+            &:nth-child(2) {
+                font-size: 3rem;
+            }
+        }
+    }
 }
